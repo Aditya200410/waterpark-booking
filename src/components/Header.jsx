@@ -8,7 +8,7 @@ const Header = () => {
         <a href='/'> <div className="logo">MRB</div></a>
         <div className="nav-links">
           <NavLink to="/" className="nav-link home" >Home</NavLink>
-          <NavLink to="/resorts" className="nav-link">Resorts</NavLink>
+          
           <NavLink to="/farmvilla" className="nav-link">Farm/Villa</NavLink>
           <NavLink to="/influencers" className="nav-link">Influencers</NavLink>
           <NavLink to="/about" className="nav-link">About Us</NavLink>

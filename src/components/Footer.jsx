@@ -5,7 +5,7 @@ const Footer = () => {
     <>
    <div className="footer">
         <div className="fleft">
-            <img src="https://newdemo.rreda.in/wp-content/uploads/2023/04/cropped-Untitled-design-1.png" alt="" />
+          <a href='/'>  <img src="https://newdemo.rreda.in/wp-content/uploads/2023/04/cropped-Untitled-design-1.png" alt="" /></a>
 
         </div>
         <div className="fm">
@@ -51,7 +51,7 @@ const Footer = () => {
               </div>
               <div className="cright">
               <p>Address</p>
-              <p>110,Lakshmi Apt, Near Kailash darshan 1,Alkapuri, Nallasopara East 491209</p>
+              <p>110,Lakshmi Apt 1,Alkapuri, Nallasopara  491209</p>
               </div>
              
             </div>
