@@ -10,18 +10,15 @@ const Footer = () => {
         </div>
         <div className="fm">
                 <div className="fmcon">
-                  <p>About us </p> 
-                  <p> Home</p> 
-                  <p> Water Parks</p> 
-                  <p> Offers</p> 
-                  <p> Gallery</p>
-                  <p> contact</p>  
+                  <a href='/about'> <p>About us </p> </a>
+                  <a href='/'><p> Home</p> </a>
+                  <a href='/contact'><p> Contact</p> </a>  
                 </div>
                 <div className="fmcon">
                   <p>Support </p> 
                   <p> Customer Support</p> 
                   <p> Privacy & Policy</p> 
-                  <p> Contact Channelss</p> 
+                  
                    
                 </div>
         </div>

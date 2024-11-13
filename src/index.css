@@ -54,6 +54,7 @@
   
   .active {
     font-weight: bold;
+    
   }
   
   .location {
@@ -71,24 +72,9 @@
   }
   
 
-
-
-.nleft{
-  display: flex;
- gap: 20px;
- 
-  padding: 20px;
-}
-
-.scon{
-  display: flex;
-  padding: 20px;
-  gap: 20px;
-}
-
 .footer{
   width: 100vw;
-  height: 400px;
+  height: max-content;
   background-color: #234778;
   color: white;
   display: flex;
@@ -97,8 +83,6 @@ justify-content: space-evenly;
 }
 .fleft{
   display: flex;
-
-
 }
 .fmcon{
   display: flex;
@@ -108,6 +92,8 @@ justify-content: space-evenly;
 
 .fleft>img{
   display: flex;
+ width: 350px;
+ height: 300px
  
 }
 .fm{
@@ -391,6 +377,7 @@ flex: 1;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  text-align: center;
 }
 .homeinfo>p{
   font-size: 50px;
@@ -654,4 +641,35 @@ h2 {
   align-items: center;
   width: 100%;
   height: 100%;
+}
+
+
+@media  (max-width: 768px) {
+  *{
+    overflow-x: hidden;
+  }
+  .nav-links{
+    display: none;
+  }
+  .footer{
+    height: max-content;
+    flex-direction: column;
+  }
+.fright{
+  margin-top: 10%;
+  margin-left: 10%;
+  margin-bottom: 10%;
+  
+}
+.carousel-card{
+  width: 100vw;
+  height: fit-content;
+}
+
+
+.homeinfo>p{
+  font-size: x-large;
+  font-weight: bold;
+  
+}
 }
