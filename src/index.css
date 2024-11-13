@@ -6,6 +6,13 @@
   margin: 0px;
   padding: 0px;
 }
+.tophead{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: xx-large;
+  color: #00aaff;
+}
   .navbar {
     display: flex;
     align-items: center;
@@ -34,10 +41,10 @@
  
   
   .home {
-    background-color: #00aaff;
-    padding: 5px 10px;
+    
+   
     border-radius: 5px;
-    color: white;
+    color: black;
   }
   
   .active {

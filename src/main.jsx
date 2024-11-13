@@ -7,6 +7,8 @@ import About from './components/About.jsx'
 
 import Home from './components/Home.jsx'
 import Contact from './components/Contact'
+import Farmvilla from './components/farmvilla'
+import Influencers from './components/Influencers'
 
 
 const router = createBrowserRouter(
@@ -15,6 +17,9 @@ const router = createBrowserRouter(
       <Route path='' element={<Home />} />
       <Route path='contact' element={<Contact />} />
       <Route path='about' element={<About />} />
+      <Route path='farmvilla' element={<Farmvilla/>}/>
+      <Route path='influencers' element={<Influencers />} />
+      <Route path='resorts' element={<About />} />
     </Route>
   )
 )
