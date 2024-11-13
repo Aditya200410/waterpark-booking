@@ -1,83 +1,159 @@
-import React from 'react'
-import {Link,NavLink} from 'react-router-dom'
-const data = [
+import React from 'react';
+import { useState } from 'react';
+
+const resorts = [
   {
-    title: 'Vaity Aqua',
-    location: 'Virar West',
-    image: 'https://example.com/vaity-aqua.jpg',
-    discount: '32%',
-    originalPrice: '800',
-    discountedPrice: '550',
-    trending: true
+    name: "Vaity Aqua",
+    location: "Virar West",
+    price: "₹550",
+    originalPrice: "₹800",
+    discount: "32% Off",
+    imageUrl: "https://myresortbooking.in/public/uploads/resorts/thumbnail/17282234839123treanding%20vaity%20aqua.png",
+    trending: true,
   },
   {
-    title: 'Manthan Resort',
-    location: 'Virar West',
-    image: 'https://example.com/manthan-resort.jpg',
-    discount: '22%',
-    originalPrice: '700',
-    discountedPrice: '550',
-    trending: false
+    name: "Manthan Resort",
+    location: "Virar West",
+    price: "₹550",
+    originalPrice: "₹700",
+    discount: "22% Off",
+    imageUrl: "https://myresortbooking.in/public/uploads/resorts/thumbnail/17273967924412manthan%20resort2.png",
+    trending: false,
   },
   {
-    title: 'Visava Resort',
-    location: 'Virar West',
-    image: 'https://example.com/visava-resort.jpg',
-    discount: '32%',
-    originalPrice: '800',
-    discountedPrice: '550',
-    trending: false
+    name: "Visava Resort",
+    location: "Virar West",
+    price: "₹550",
+    originalPrice: "₹800",
+    discount: "32% Off",
+    imageUrl: "https://myresortbooking.in/public/uploads/resorts/thumbnail/17274182628349Visava%20resort.png",
+    trending: false,
   },
   {
-    title: 'Dream World',
-    location: 'Virar West',
-    image: 'https://example.com/dream-world.jpg',
-    discount: '22%',
-    originalPrice: '700',
-    discountedPrice: '550',
-    trending: false
+    name: "Dream World",
+    location: "Virar West",
+    price: "₹550",
+    originalPrice: "₹700",
+    discount: "22% Off",
+    imageUrl: "https://myresortbooking.in/public/uploads/resorts/thumbnail/17273969538750dream%20world%202.png",
+    trending: false,
+  },
+  {
+    name: "Vaity Aqua",
+    location: "Virar West",
+    price: "₹550",
+    originalPrice: "₹800",
+    discount: "32% Off",
+    imageUrl: "https://myresortbooking.in/public/uploads/resorts/thumbnail/17282234839123treanding%20vaity%20aqua.png",
+    trending: true,
+  },
+  {
+    name: "Manthan Resort",
+    location: "Virar West",
+    price: "₹550",
+    originalPrice: "₹700",
+    discount: "22% Off",
+    imageUrl: "https://myresortbooking.in/public/uploads/resorts/thumbnail/17273967924412manthan%20resort2.png",
+    trending: false,
+  },
+  {
+    name: "Visava Resort",
+    location: "Virar West",
+    price: "₹550",
+    originalPrice: "₹800",
+    discount: "32% Off",
+    imageUrl: "https://myresortbooking.in/public/uploads/resorts/thumbnail/17274182628349Visava%20resort.png",
+    trending: false,
+  },
+  {
+    name: "Dream World",
+    location: "Virar West",
+    price: "₹550",
+    originalPrice: "₹700",
+    discount: "22% Off",
+    imageUrl: "https://myresortbooking.in/public/uploads/resorts/thumbnail/17273969538750dream%20world%202.png",
+    trending: false,
   },
 ];
 
+const Card = ({ resort }) => (
+  <div className="card">
+    <div className="card-image">
+      <img src={resort.imageUrl} alt={resort.name} />
+      
+    </div>
+    <div className="card-content">
+      <h3>{resort.name}</h3>
+      <p>{resort.location}</p>
+      <p className="discount">{resort.discount}</p>
+      <p className="price">
+        <span className="current-price">{resort.price}</span>
+        <span className="original-price">{resort.originalPrice}</span>
+      </p>
+      <button className="explore-button">Explore</button>
+    </div>
+  </div>
+);
 
 const Home = () => {
+  const images = [
+    'https://myresortbooking.in/public/uploads/banners/17274193709185mrb2.png',
+    'https://myresortbooking.in/public/uploads/banners/17274193709185mrb2.png',
+    'https://myresortbooking.in/public/uploads/banners/17274193709185mrb2.png',
+    'https://myresortbooking.in/public/uploads/banners/17274193709185mrb2.png',
+  ];
 
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  
+  const goToPrevious = () => {
+    const isFirstImage = currentIndex === 0;
+    const newIndex = isFirstImage ? images.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+  };
+
+  const goToNext = () => {
+    const isLastImage = currentIndex === images.length - 1;
+    const newIndex = isLastImage ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+  };
+
   return (
-    <div className='homepage'>
-    <div className="page1">
-    <div className="container">
-      {data.map((item, index) => (
-        <div key={index} className="card">
-          <div className="card-header">
-            <h2 className="card-title">{item.title}</h2>
-            <span className="card-location">{item.location}</span>
-          </div>
-          <div className="card-image">
-            <img src={item.image} alt={item.title} />
-            {item.trending && (
-              <div className="card-badge">Trending</div>
-            )}
-          </div>
-          <div className="card-content">
-            <div className="card-discount">{item.discount}% Off</div>
-            <div className="card-price">
-              <span className="card- original-price">₹{item.originalPrice}</span>
-              <span className="card-discounted-price">₹{item.discountedPrice}</span>
-            </div>
-          </div>
-        </div>
+    <div className="homepage">
+       <div className="carousel-card">
+      <button className="carousel-button left" onClick={goToPrevious}>
+        &#10094;
+      </button>
+
+      <div className="carousel-image">
+        <img src={images[currentIndex]} alt={`Slide ${currentIndex}`} />
+      </div>
+
+      <button className="carousel-button right" onClick={goToNext}>
+        &#10095;
+      </button>
+
+      <div className="carousel-indicators">
+        {images.map((_, index) => (
+          <span
+            key={index}
+            className={`indicator ${index === currentIndex ? 'active' : ''}`}
+            onClick={() => setCurrentIndex(index)}
+          ></span>
+        ))}
+      </div>
+    </div>
+
+      <div className="homeinfo">
+        <p>Popular Resorts</p>
+        <p>Creating Memories, One Adventure at a Time</p>
+      </div>
+    <div className="card-container">
+      {resorts.map((resort, index) => (
+        <Card key={index} resort={resort} />
       ))}
     </div>
     </div>
-    <div className="page2">
-      <h1>  Popular Resorts</h1>
-      <h3>  Creating Memories, One Adventure at a Time</h3>
-    </div>
+  );
+};
 
-    </div>
-  )
-}
-
-export default Home
+export default Home;
