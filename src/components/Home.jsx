@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-
+import Link from 'next/link';
 const resorts = [
   {
     name: "Vaity Aqua",
@@ -90,7 +90,7 @@ const Card = ({ resort }) => (
         <span className="current-price">{resort.price}</span>
         <span className="original-price">{resort.originalPrice}</span>
       </p>
-     <a href="/resorts"> <button className="explore-button" >Explore</button></a>
+     <Link href="/resorts"> <button className="explore-button" >Explore</button></Link>
     </div>
   </div>
 );
