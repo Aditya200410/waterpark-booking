@@ -68,7 +68,7 @@ const Footer = () => {
             <p>Water park Chalo</p>
           </div>
           <div className="fbl">
-            <p>Build by Aditya</p>
+            <p>Build By Appzeto</p>
           </div>
         </div>
     
