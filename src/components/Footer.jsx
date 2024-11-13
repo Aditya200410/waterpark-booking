@@ -43,8 +43,8 @@ const Footer = () => {
                 <img src="https://static.vecteezy.com/system/resources/thumbnails/002/205/854/small/email-icon-free-vector.jpg" alt="" />
               </div>
               <div className="cright">
-              <p>Phone number</p>
-              <p>918847714464</p>
+              <p>Email Address</p>
+              <p>wpc@waterparkchalo.com</p>
               </div>
              
             </div>
@@ -53,8 +53,8 @@ const Footer = () => {
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAmTVkqizpykOy4P0YjBxJ9NKxQLYddy1FRA&s" alt="" />
               </div>
               <div className="cright">
-              <p>Phone number</p>
-              <p>918847714464</p>
+              <p>Address</p>
+              <p>110,Lakshmi Apt, Near Kailash darshan 1,Alkapuri, Nallasopara East 491209</p>
               </div>
              
             </div>

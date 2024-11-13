@@ -5,18 +5,61 @@
   box-sizing: border-box;
   margin: 0px;
   padding: 0px;
-
 }
-.navbar{
-  background-color: #3179af;
-  width: 100vw;
-  height: 70px;
-  display: flex;
-  justify-content:space-between;
-  align-items: center;
-  color: white;
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    height: 90px;
+    background-color: white;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+  }
   
-}
+  .logo {
+    font-weight: bold;
+    font-size: 24px;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .nav-link {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+  }
+ 
+  
+  .home {
+    background-color: #00aaff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+  }
+  
+  .active {
+    font-weight: bold;
+  }
+  
+  .location {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .location-text {
+    color: gray;
+  }
+  
+  .city {
+    font-weight: bold;
+  }
+  
+
+
 
 .nleft{
   display: flex;
@@ -37,7 +80,8 @@
   background-color: #234778;
   color: white;
   display: flex;
-justify-content: center;
+justify-content: space-evenly;
+
 }
 .fleft{
   display: flex;
@@ -76,7 +120,8 @@ flex: 1;
   display: flex;
     flex-direction: column;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
+    font-weight: 700;
 }
 .fbottom{
   border-top: 2px solid white;
@@ -91,10 +136,8 @@ flex: 1;
 
 .fbl{
   margin-top: 10px;
- 
-
-  
 }
+
 .cleft>img{
   width: 40px;
   height: 40px;
@@ -103,5 +146,6 @@ flex: 1;
 }
 .cinfo{
   display: flex;
-  gap: 20px;
+  gap: 30px;
+  height: auto;
 }
