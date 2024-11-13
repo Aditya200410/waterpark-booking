@@ -259,4 +259,38 @@ flex: 1;
   background-color: #007bce;
 }
 
+.about-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: #333;
+}
+
+.about-title {
+  color: #1d8cf8;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.about-intro {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.about-paragraph {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.about-ending {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 20px;
+  line-height: 1.8;
+}
+
 
