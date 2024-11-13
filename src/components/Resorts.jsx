@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 
 const Resorts = () => {
@@ -186,7 +187,7 @@ const Resorts = () => {
         <label>Pickup & Drop Service</label>
       </div>
 
-     <a href='/checkout'> <button className="checkout-button">PROCEED TO CHECKOUT</button></a>
+     <NavLink href='/checkout'> <button className="checkout-button">PROCEED TO CHECKOUT</button></NavLink>
     </div>
     </>
   );
