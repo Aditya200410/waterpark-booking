@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*{
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+
+}
+.navbar{
+  background-color: #3179af;
+  width: 100vw;
+  height: 70px;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  color: white;
+  
+}
+
+.nleft{
+  display: flex;
+ gap: 20px;
+ 
+  padding: 20px;
+}
+
+.scon{
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+}
+
+.footer{
+  width: 100vw;
+  height: 400px;
+  background-color: #234778;
+  color: white;
+  display: flex;
+justify-content: center;
+}
+.fleft{
+  display: flex;
+  flex: 1;
+
+}
+.fmcon{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fleft>img{
+  display: flex;
+ 
+}
+.fm{
+flex: 2;
+justify-content: center;
+margin-top: 100px;
+  display: flex;
+  gap: 100px;
+  font-weight: 700;
+}
+
+.fright{
+  justify-content: center;
+  display: flex;
+    flex-direction: column;
+ 
+flex: 1;
+}
+
+.frc{
+  justify-content: center;
+  display: flex;
+    flex-direction: column;
+    flex-direction: column;
+    gap: 20px;
+}
+.fbottom{
+  border-top: 2px solid white;
+  width: 100vw;
+  height: 70px;
+  background-color: #234778;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.fbl{
+  margin-top: 10px;
+ 
+
+  
+}
+.cleft>img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  object-fit: cover;
+}
+.cinfo{
+  display: flex;
+  gap: 20px;
+}
