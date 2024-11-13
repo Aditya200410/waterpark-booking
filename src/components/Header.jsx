@@ -20,6 +20,8 @@ const Header = () => {
           <span className="city">Mumbai - All</span>
         </div>
       </nav>
+
+      
     </>
 
 

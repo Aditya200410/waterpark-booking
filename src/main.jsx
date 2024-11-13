@@ -9,6 +9,7 @@ import Home from './components/Home.jsx'
 import Contact from './components/Contact'
 import Farmvilla from './components/farmvilla'
 import Influencers from './components/Influencers'
+import Resorts from './components/Resorts'
 
 
 const router = createBrowserRouter(
@@ -19,7 +20,7 @@ const router = createBrowserRouter(
       <Route path='about' element={<About />} />
       <Route path='farmvilla' element={<Farmvilla/>}/>
       <Route path='influencers' element={<Influencers />} />
-      <Route path='resorts' element={<About />} />
+      <Route path='resorts' element={<Resorts />} />
     </Route>
   )
 )

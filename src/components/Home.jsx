@@ -90,7 +90,7 @@ const Card = ({ resort }) => (
         <span className="current-price">{resort.price}</span>
         <span className="original-price">{resort.originalPrice}</span>
       </p>
-      <button className="explore-button">Explore</button>
+     <a href="/resorts"> <button className="explore-button" >Explore</button></a>
     </div>
   </div>
 );
