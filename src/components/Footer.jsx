@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {Link,NavLink} from 'react-router-dom'
 const Footer = () => {
   return (
     <>
@@ -10,9 +10,9 @@ const Footer = () => {
         </div>
         <div className="fm">
                 <div className="fmcon">
-                  <a href='/about'> <p>About us </p> </a>
-                  <a href='/'><p> Home</p> </a>
-                  <a href='/contact'><p> Contact</p> </a>  
+                  <NavLink href='/about'> <p>About us </p> </NavLink>
+                  <NavLink href='/'><p> Home</p> </NavLink>
+                  <NavLink href='/contact'><p> Contact</p> </NavLink>  
                 </div>
                 <div className="fmcon">
                   <p>Support </p> 
