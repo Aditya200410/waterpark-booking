@@ -806,7 +806,7 @@ input[type="date"] {
   align-items: center;
   gap: 5%;
   width: 100vw;
-  height: 85px;
+  height: 80px;
   flex-direction: row;
 
 }
@@ -822,8 +822,8 @@ input[type="date"] {
   display: flex;
   justify-content: center;
   
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
 }
 .mofo{
   position: absolute;
