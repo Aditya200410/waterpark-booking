@@ -7,6 +7,13 @@
   margin: 0px;
   padding: 0px;
 }
+.topmar{
+  margin-top: 100px;
+  width: 100vw;
+  height: fit-content;
+  
+  z-index: 99;
+}
 .fbr img{
   width: 40px;
   height: 40px;
@@ -268,8 +275,8 @@ flex: 1;
 .form-group input,
 .form-group textarea {
   padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  
+
   font-size: 14px;
 }
 
@@ -717,7 +724,7 @@ input[type="date"] {
   width: calc(100% - 20px);
   padding: 10px;
   margin: 10px 0;
-  border: 1px solid #ccc;
+  
   border-radius: 4px;
 }
 

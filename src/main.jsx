@@ -10,6 +10,9 @@ import Farmvilla from './components/farmvilla'
 import Influencers from './components/Influencers'
 import Resorts from './components/Resorts'
 import Checkout from './components/Checkout'
+import Login from './components/Login'
+
+import UserDetails from './components/UserDetails'
 
 
 const router = createBrowserRouter(
@@ -22,6 +25,9 @@ const router = createBrowserRouter(
       <Route path='influencers' element={<Influencers />} />
       <Route path='resorts' element={<Resorts />} />
       <Route path='checkout' element={<Checkout />} />
+      <Route path='/sign-in' element={<Login />} />
+      <Route path='/UserDetails' element={<UserDetails />} />
+     
     </Route>
   )
 )

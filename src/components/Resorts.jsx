@@ -12,6 +12,8 @@ const Resorts = () => {
 
   const adultPrice = 550;
   const childPrice = 400;
+  const dadultPrice = 100;
+  const dchildPrice = 100;
 
   // Load data from localStorage when component mounts
   useEffect(() => {
@@ -39,17 +41,18 @@ const Resorts = () => {
   };
 
   const subtotal = adultCount * adultPrice + childCount * childPrice;
-  const total = subtotal + (pickup ? 50 : 0);
+  const total = subtotal ;
+  const dtotal = adultCount * dadultPrice + childCount * dchildPrice;
 
 
    // Update localStorage whenever data changes
   useEffect(() => {
     localStorage.setItem('adultCount', adultCount);
     localStorage.setItem('childCount', childCount);
-    localStorage.setItem('total', total);
+    localStorage.setItem('total', dtotal);
     localStorage.setItem('pickup', pickup);
     if (selectedDate) localStorage.setItem('selectedDate', selectedDate);
-  }, [adultCount, childCount, pickup, selectedDate,total]);
+  }, [adultCount, childCount, pickup, selectedDate,dtotal]);
 
   const handleAdultChange = (increment) => {
     setAdultCount((prev) => Math.max(0, prev + increment));
@@ -87,47 +90,27 @@ const Resorts = () => {
     'D.J. Music',
     'Tube Slide',
   ];
-  const tripinfo = [
-    'Biggest Wave Pool',
-    '4 Big Swimming Pool',
-    '12+ Water Slides',
-    'Jungle theme',
-    'Tornado Slide',
-    '2 Rain Dance',
-    'D.J. Music',
-    'Tube Slide',
+const tripinfo = [
+'9 Am to 5 Pm',
+'Virar, Maharashtra',
+'Meals',
+'Veg / Non-veg',
+'Parking',
+'Available Rooms',
+'Free Cancellation(One Day Prior)'
   ];
 
   const map = [
-    'Biggest Wave Pool',
-    '4 Big Swimming Pool',
-    '12+ Water Slides',
-    'Jungle theme',
-    'Tornado Slide',
-    '2 Rain Dance',
-    'D.J. Music',
-    'Tube Slide',
+    
   ];
   const cost = [
-    'Biggest Wave Pool',
-    '4 Big Swimming Pool',
-    '12+ Water Slides',
-    'Jungle theme',
-    'Tornado Slide',
-    '2 Rain Dance',
-    'D.J. Music',
-    'Tube Slide',
+   ' Cost Includes',
+' Morning Breakfast',
+ 'Lunch Veg/Non-Veg',
+ 'Evening Hie Tea'
   ];
 
   const FAQ = [
-    'Biggest Wave Pool',
-    '4 Big Swimming Pool',
-    '12+ Water Slides',
-    'Jungle theme',
-    'Tornado Slide',
-    '2 Rain Dance',
-    'D.J. Music',
-    'Tube Slide',
   ];
 
 
@@ -189,36 +172,36 @@ const Resorts = () => {
       )}
 {activeTab === 'tripinfo' && (
         <div className="attractions-list">
-          {attractions.map((attraction, index) => (
+          {tripinfo.map((tripinfo, index) => (
             <div key={index} className="attraction-item">
-              <span className="checkmark">✔️</span> {attraction}
+              <span className="checkmark">✔️</span> {tripinfo}
             </div>
           ))}
         </div>
       )}
       {activeTab === 'map' && (
         <div className="attractions-list">
-          {attractions.map((attraction, index) => (
+          {map.map((map, index) => (
             <div key={index} className="attraction-item">
-              <span className="checkmark">✔️</span> {attraction}
+              <span className="checkmark">✔️</span> {map}
             </div>
           ))}
         </div>
       )}
       {activeTab === 'FAQ' && (
         <div className="attractions-list">
-          {attractions.map((attraction, index) => (
+          {FAQ.map((FAQ, index) => (
             <div key={index} className="attraction-item">
-              <span className="checkmark">✔️</span> {attraction}
+              <span className="checkmark">✔️</span> {FAQ}
             </div>
           ))}
         </div>
       )}
         {activeTab === 'cost' && (
         <div className="attractions-list">
-          {attractions.map((attraction, index) => (
+          {cost.map((cost, index) => (
             <div key={index} className="attraction-item">
-              <span className="checkmark">✔️</span> {attraction}
+              <span className="checkmark">✔️</span> {cost}
             </div>
           ))}
         </div>
@@ -307,6 +290,10 @@ const Resorts = () => {
         <div className="summary-item total">
           <strong>Total Amt.:</strong>
           <strong>₹{total}</strong>
+        </div>
+        <div className="summary-item total">
+          <strong>Total downpayment:</strong>
+          <strong>₹{dtotal}</strong>
         </div>
       </div>
 

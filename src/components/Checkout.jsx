@@ -1,134 +1,158 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from "react";
+import { Stack, Button, Typography, TextField, } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
-const Checkout = () => {
+export default function SignUp() {
 
-  const [bookingData, setBookingData] = useState({
-    adultCount: 0,
-    childCount: 0,
-    total:0,
-    pickup: false,
-    selectedDate: null,
-  });
+    const [fname, setFname] = useState("");
+    const [pnum, setPnum] = useState("")
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const navigate = useNavigate();
 
-  // Load data from localStorage when component mounts
-  useEffect(() => {
-    const adultCount = parseInt(localStorage.getItem('adultCount')) || 0;
-    const childCount = parseInt(localStorage.getItem('childCount')) || 0;
-    const total = parseInt(localStorage.getItem('total')) || 0;
-    const pickup = localStorage.getItem('pickup') === 'true';
-    const selectedDate = localStorage.getItem('selectedDate') || null;
+    const handleSubmit = (e) => {
 
-    setBookingData({ adultCount, childCount, pickup, selectedDate,total });
-  }, []);
+        e.preventDefault();
 
-  const { adultCount, childCount, pickup, selectedDate, total } = bookingData;
+        console.log(fname, pnum,  email, password);
+        fetch("https://iic-backend-r3jg.onrender.com/register", {
+            method: "POST",
+            crossDomain: true,
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+                "Access-Control-Allow-Origin": "*",
+            },
+            body: JSON.stringify({
+                fname,
+                email,
+                pnum,
+               
+               
+                password,
 
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    location: '',
-    dob: '',
-    coupon: ''
-  });
+            }),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data, "userRegister");
+                if (data.status === "ok") {
+                    alert("Registration Successful");
+                    setTimeout(() => {
+                        navigate('/sign-in');
+                    }, 500);
+                } else {
+                    alert("Something went wrong");
+                }
+            });
+    };
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
-  };
+    return (
+      <div className="topmar">
+        <Stack sx={{ width: '100%', display: 'flex', justifyContent: "center", alignItems: 'center', height: "100dvh",background:"#021E30" }}>
+            <Stack sx={{ display: "flex", flexDirection: "row", width: { xs: '100%', sm: '85%', md: '80%' }, height: { xs: "100dvh", sm: "90dvh", md: '90dvh' }, boxShadow: "1px 1px 10px 8px #00000048", borderRadius: '8px', border: { xs: "2px solid white", sm: "none" } }}>
+                <Stack sx={{ display: { xs: 'none', md: 'flex' }, justifyContent: 'center', alignItems: 'center', flex: '1', background: `url(https://newdemo.rreda.in/wp-content/uploads/2023/04/cropped-Untitled-design-1.png)`, backgroundPosition: 'center', backgroundRepeat: "no-repeat", backgroundSize: 'cover', borderTopLeftRadius: "8px", borderBottomLeftRadius: "8px" }}>
+                </Stack>
+                <Stack sx={{ display: 'flex', justifyContent: "center", alignItems: "center", flex: "1", height: 'inherit', borderTopRightRadius: '8px', borderBottomRightRadius: "8px", position: 'relative' }}>
+                    <Stack sx={{ background: `url(./iic_logo.png)`, height: '100%', display: 'flex', backgroundPosition: "center", backgroundRepeat: 'no-repeat', backgroundSize: 'contain', zIndex: '1', width: '100%', position: "absolute", opacity: '0.2' }}>
+                    </Stack>
+                    <form onSubmit={handleSubmit} style={{ width: '100%', padding: '1.5rem', height: 'inherit', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', gap: '8px', zIndex: '2', }}>
+                        <Typography variant="h3" sx={{ color: 'white', fontWeight: 'bolder', fontFamily: 'Poppins, sans-serif', borderBottom: '4px solid white', paddingBottom: '0.25rem', borderRadius: '2px', }}>Sign Up</Typography>
+                        <Stack sx={{ width: '100%', }}>
+                            <TextField
+                                required  label="Full Name" name='full name' type='text' placeholder='Enter full name' onChange={(e) => setFname(e.target.value)} InputLabelProps={{ sx: { color: "whitesmoke", fontSize: { xs: "1.5rem", md: "16px" } } }} sx={{
+                                    '& .MuiInputBase-input': {
+                                        color: 'whitesmoke',
+                                        fontSize: { xs: "1.5rem", md: "16px" },
+                                    },
+                                    '& .MuiInput-underline:before': {
+                                        borderBottomColor: 'white',
+                                    },
+                                    '& .MuiInput-underline:hover:not(.Mui-disabled):before': {
+                                        borderBottomColor: '#00CED1',
+                                    },
+                                    
+                                }} variant="standard" />
+                        </Stack>
 
-  const handleApplyCoupon = () => {
-    // Logic to apply coupon
-    console.log('Coupon applied:', formData.coupon);
-  };
+                        <Stack sx={{ width: '100%' }}>
+                            <TextField
+                                required fullWidth id="outlined-required" label="Email Address" name='email' type='email' placeholder='Enter email' onChange={(e) => setEmail(e.target.value)} InputLabelProps={{ sx: { color: "whitesmoke", fontSize: { xs: "1.5rem", md: "16px" } } }} sx={{
+                                    '& .MuiInputBase-input': {
+                                        color: 'whitesmoke',
+                                        fontSize: { xs: "1.5rem", md: "16px" }
+                                    },
+                                    '& .MuiInput-underline:before': {
+                                        borderBottomColor: 'white',
+                                    },
+                                    '& .MuiInput-underline:hover:not(.Mui-disabled):before': {
+                                        borderBottomColor: '#00CED1',
+                                    },
+                                    '& .MuiInput-underline:after': {
+                                        borderBottomColor: 'whitesmoke',
+                                    },
+                                }} variant="standard" />
+                        </Stack>
 
-  const handlePayment = () => {
-    // Logic to handle payment
-    console.log('Payment made');
-  };
+                        <Stack gap={2} sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
+                            <TextField
+                                required fullWidth id="outlined-required" label="Phone Number" name='Phno' type='number' placeholder='Enter Phone number' onChange={(e) => setPnum(e.target.value)} InputLabelProps={{ sx: { color: "whitesmoke", fontSize: { xs: "1.5rem", md: "16px" } } }} sx={{
+                                    '& .MuiInputBase-input': {
+                                        color: 'whitesmoke',
+                                        fontSize: { xs: "1.5rem", md: "16px" }
+                                    },
+                                    '& .MuiInput-underline:before': {
+                                        borderBottomColor: 'white',
+                                    },
+                                    '& .MuiInput-underline:hover:not(.Mui-disabled):before': {
+                                        borderBottomColor: '#00CED1',
+                                    },
+                                    '& .MuiInput-underline:after': {
+                                        borderBottomColor: 'whitesmoke',
+                                    },
+                                }} variant="standard" />
 
-  return (
-    <div className="cpage">
-        <h1>Checkout Details</h1>
-    <div className="checkout">
-      
-      <div className="personal-details">
-        <h2>Personal Details</h2>
-        <input
-          type="text"
-          name="name"
-          required
-          placeholder="Enter Name"
-          value={formData.name}
-          onChange={handleChange}
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Enter Email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="text"
-          name="phone"
-          placeholder="Enter Phone No."
-          value={formData.phone}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="text"
-          name="location"
-          placeholder="Enter Location"
-          value={formData.location}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="date"
-          name="dob"
-          placeholder="mm/dd/yyyy"
-          value={formData.dob}
-          onChange={handleChange}
-          required
-        />
-      </div>
-      <div className="apply-coupon">
-        <h2>Apply Coupon</h2>
-        <input
-          type="text"
-          name="coupon"
-          placeholder="Enter Coupon"
-          value={formData.coupon}
-          onChange={handleChange}
-        />
-        <button className='cbutton' onClick={handleApplyCoupon}>APPLY</button>
-      </div>
-      <div className="booking-summary">
-        <h2>Booking Summary</h2>
-        <div className="summary-details">
-        <div>
-      <h1>Checkout Page</h1>
-      <p>Adults: {adultCount}</p>
-      <p>Children: {childCount}</p>
-      <p>Pickup Service: {pickup ? 'Yes' : 'No'}</p>
-      <p>Selected Date: {selectedDate ? `Sun Nov ${selectedDate} 2024` : 'Not Selected'}</p>
-    </div>
+                           
+                        </Stack>
+
+                        
+
+                        <Stack sx={{ width: '100%' }}>
+                            <TextField
+                                required fullWidth id="outlined-required" label="Password" name='password' type='password' placeholder='Enter password' onChange={(e) => setPassword(e.target.value)} InputLabelProps={{ sx: { color: "whitesmoke", fontSize: { xs: "1.5rem", md: "16px" } } }} sx={{
+                                    '& .MuiInputBase-input': {
+                                        color: 'whitesmoke',
+                                        fontSize: { xs: "1.5rem", md: "16px" }
+                                    },
+                                    '& .MuiInput-underline:before': {
+                                        borderBottomColor: 'white',
+                                    },
+                                    '& .MuiInput-underline:hover:not(.Mui-disabled):before': {
+                                        borderBottomColor: '#00CED1',
+                                    },
+                                    '& .MuiInput-underline:after': {
+                                        borderBottomColor: 'whitesmoke',
+                                    },
+                                }} variant="standard" />
+                        </Stack>
+                        <Stack sx={{ width: '100%' }}>
+                            <Button variant="contained" sx={{ background: "#00CED1", color: '#021E30', padding: '8px 0px', borderRadius: '.75rem', fontSize: { xs: "1.15rem", md: "16px" },'&:hover': {
+                                transform: "scale(1.001)",
+                                background:'white',
+                                color:"#00ced1",
+                                fontWeight:"500",
+                                border:".125rem solid #00ced1"
+                            } }} type="submit">
+                                Sign Up
+                            </Button>
+                        </Stack>
+                        <Typography sx={{ color: 'whitesmoke', textAlign: 'center' }}>
+                            Returing Customer ! <a style={{ color: '#00CED1' }} href="/sign-in">sign in?</a>
+                        </Typography>
+                    </form>
+                </Stack>
+            </Stack>
+        </Stack>
         </div>
-        <div className="terms">
-          <input type="checkbox" id="terms" />
-          <label htmlFor="terms">I acknowledge and agree to the terms and conditions.</label>
-        </div>
-        <button className='cbutton' onClick={handlePayment}>PAY : {total}</button>
-      </div>
-    </div>
-    </div>
-  );
-};
-
-export default Checkout;
+    );
+}
