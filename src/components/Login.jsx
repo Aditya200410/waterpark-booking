@@ -107,7 +107,7 @@ export default function Login() {
               </Button>
             </Stack>
             <Typography sx={{ color: 'whitesmoke', textAlign: 'center' }}>
-              Don't have an account ? <a style={{ color: '#00CED1' }} href="/sign-up">Sign Up</a>
+              Don't have an account ? <a style={{ color: '#00CED1' }} href="/checkout">Sign Up</a>
             </Typography>
           </form>
         </Stack>

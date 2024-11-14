@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Stack, Button, Typography, TextField, } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 export default function SignUp() {
 
@@ -39,7 +39,7 @@ export default function SignUp() {
                 if (data.status === "ok") {
                     alert("Registration Successful");
                     setTimeout(() => {
-                        navigate('/sign-in');
+                      navigate('/sign-in');
                     }, 500);
                 } else {
                     alert("Something went wrong");
@@ -147,7 +147,7 @@ export default function SignUp() {
                             </Button>
                         </Stack>
                         <Typography sx={{ color: 'whitesmoke', textAlign: 'center' }}>
-                            Returing Customer ! <a style={{ color: '#00CED1' }} href="/sign-in">sign in?</a>
+                            Returing Customer ! <NavLink to="/sign-in" style={{ color: '#00CED1' }} >sign in?</NavLink>
                         </Typography>
                     </form>
                 </Stack>
