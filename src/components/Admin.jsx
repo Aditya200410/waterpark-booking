@@ -7,7 +7,8 @@ function Admin() {
     imageUrl: "",
     location: "",
     price: "",
-    disprice: ""
+    disprice: "",
+    down:"",
   });
 
   const handleInputChange = (e) => {
@@ -26,7 +27,8 @@ function Admin() {
         imageUrl: "",
         location: "",
         price: "",
-        disprice: ""
+        disprice: "",
+        down:""
       });
     }
   };
@@ -76,6 +78,13 @@ function Admin() {
           value={newTask.price}
           onChange={handleInputChange}
         />
+          <input
+          type="number"
+          name="down"
+          placeholder="downpayment"
+          value={newTask.down}
+          onChange={handleInputChange}
+        />
         <input
           type="number"
           name="disprice"
@@ -99,6 +108,12 @@ function Admin() {
                   placeholder="Title"
                 />
                 <input
+                  type="number"
+                  value={task.down}
+                  onChange={(e) => editTask(task.id, "down", e.target.value)}
+                  placeholder="Downpayment"
+                />
+                <input
                   type="text"
                   value={task.location}
                   onChange={(e) => editTask(task.id, "location", e.target.value)}
@@ -116,7 +131,10 @@ function Admin() {
                   onChange={(e) => editTask(task.id, "disprice", e.target.value)}
                   placeholder="Discount Price"
                 />
+                 
+              
               </div>
+              
               <button className="delete-button" onClick={() => deleteTask(task.id)}>Delete</button>
             </div>
           ))
