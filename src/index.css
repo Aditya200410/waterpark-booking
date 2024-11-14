@@ -862,4 +862,10 @@ input[type="date"] {
   margin: 2px ;
   color: #555;
 }
+.topmar{
+  margin-bottom: 100px;
+  width: 100vw;
+  height: fit-content;
+ 
+}
 }
