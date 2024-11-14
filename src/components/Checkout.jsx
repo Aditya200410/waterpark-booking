@@ -1,6 +1,28 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Checkout = () => {
+
+  const [bookingData, setBookingData] = useState({
+    adultCount: 0,
+    childCount: 0,
+    total:0,
+    pickup: false,
+    selectedDate: null,
+  });
+
+  // Load data from localStorage when component mounts
+  useEffect(() => {
+    const adultCount = parseInt(localStorage.getItem('adultCount')) || 0;
+    const childCount = parseInt(localStorage.getItem('childCount')) || 0;
+    const total = parseInt(localStorage.getItem('total')) || 0;
+    const pickup = localStorage.getItem('pickup') === 'true';
+    const selectedDate = localStorage.getItem('selectedDate') || null;
+
+    setBookingData({ adultCount, childCount, pickup, selectedDate,total });
+  }, []);
+
+  const { adultCount, childCount, pickup, selectedDate, total } = bookingData;
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -85,24 +107,19 @@ const Checkout = () => {
       <div className="booking-summary">
         <h2>Booking Summary</h2>
         <div className="summary-details">
-          <p>TICKETS</p>
-          <p>Thu Nov 14 2024</p>
-          <p>Adult (1) ₹ 550</p>
-          <p>Child (0) ₹ 0</p>
-          <p>Subtotal: ₹ 550</p>
-          <p>PAYMENT DETAILS</p>
-          <p>Subtotal ₹ 550</p>
-          <p>Conv. Fee ₹ 0</p>
-          <p>Pickup Drop ₹ 0</p>
-          <p>Total Amt.: ₹ 550</p>
-          <p>Down Payment ₹ 50</p>
-          <p>Remaining Payment ₹ 500</p>
+        <div>
+      <h1>Checkout Page</h1>
+      <p>Adults: {adultCount}</p>
+      <p>Children: {childCount}</p>
+      <p>Pickup Service: {pickup ? 'Yes' : 'No'}</p>
+      <p>Selected Date: {selectedDate ? `Sun Nov ${selectedDate} 2024` : 'Not Selected'}</p>
+    </div>
         </div>
         <div className="terms">
           <input type="checkbox" id="terms" />
           <label htmlFor="terms">I acknowledge and agree to the terms and conditions.</label>
         </div>
-        <button className='cbutton' onClick={handlePayment}>PAY ₹50</button>
+        <button className='cbutton' onClick={handlePayment}>PAY : {total}</button>
       </div>
     </div>
     </div>

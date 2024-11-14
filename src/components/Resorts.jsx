@@ -1,29 +1,58 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 
 const Resorts = () => {
+
   const [adultCount, setAdultCount] = useState(1);
   const [childCount, setChildCount] = useState(0);
+  
   const [pickup, setPickup] = useState(false);
   const [selectedDate, setSelectedDate] = useState(null);
 
   const adultPrice = 550;
   const childPrice = 400;
 
-  const handleAdultChange = (increment) => {
-    setAdultCount((prev) => Math.max(0, prev + increment));
-  };
+  // Load data from localStorage when component mounts
+  useEffect(() => {
+    const savedAdultCount = localStorage.getItem('adultCount');
+    const savedChildCount = localStorage.getItem('childCount');
+    
+    const savedPickup = localStorage.getItem('pickup') === 'true';
+    const savedSelectedDate = localStorage.getItem('selectedDate');
+
+    if (savedAdultCount) setAdultCount(parseInt(savedAdultCount));
+    if (savedChildCount) setChildCount(parseInt(savedChildCount));
+ 
+    if (savedSelectedDate) setSelectedDate(parseInt(savedSelectedDate));
+    setPickup(savedPickup);
+  }, []);
+
+ 
 
   const handleChildChange = (increment) => {
     setChildCount((prev) => Math.max(0, prev + increment));
   };
 
+  const handleDateSelect = (day) => {
+    setSelectedDate(day);
+  };
+
   const subtotal = adultCount * adultPrice + childCount * childPrice;
   const total = subtotal + (pickup ? 50 : 0);
 
-  const handleDateSelect = (day) => {
-    setSelectedDate(day);
+
+   // Update localStorage whenever data changes
+  useEffect(() => {
+    localStorage.setItem('adultCount', adultCount);
+    localStorage.setItem('childCount', childCount);
+    localStorage.setItem('total', total);
+    localStorage.setItem('pickup', pickup);
+    if (selectedDate) localStorage.setItem('selectedDate', selectedDate);
+  }, [adultCount, childCount, pickup, selectedDate,total]);
+
+  const handleAdultChange = (increment) => {
+    setAdultCount((prev) => Math.max(0, prev + increment));
   };
 
   const images = [
@@ -134,21 +163,42 @@ const Resorts = () => {
       </div>
 
       <div className="ticket-selector">
-        <div className="ticket">
-          <span>Adult (Above 8 yr)</span>
-          <span>₹{adultPrice}</span>
-          <button onClick={() => handleAdultChange(-1)}>-</button>
-          <span>{adultCount}</span>
-          <button onClick={() => handleAdultChange(1)}>+</button>
+          <div className="ticket">
+            <span>Adult (Above 8 yr)</span>
+            <span>₹{adultPrice}</span>
+            <button onClick={() => handleAdultChange(-1)}>-</button>
+            <span>{adultCount}</span>
+            <button onClick={() => handleAdultChange(1)}>+</button>
+          </div>
+          <div className="ticket">
+            <span>Children (3 to 8 yr)</span>
+            <span>₹{childPrice}</span>
+            <button onClick={() => handleChildChange(-1)}>-</button>
+            <span>{childCount}</span>
+            <button onClick={() => handleChildChange(1)}>+</button>
+          </div>
         </div>
-        <div className="ticket">
-          <span>Children (3 to 8 yr)</span>
-          <span>₹{childPrice}</span>
-          <button onClick={() => handleChildChange(-1)}>-</button>
-          <span>{childCount}</span>
-          <button onClick={() => handleChildChange(1)}>+</button>
+
+        <div className="booking-summary">
+          <h3>Booking Summary</h3>
+          <div className="summary-item">
+            <span>Selected Date:</span>
+            <span>{selectedDate ? `Sun Nov ${selectedDate} 2024` : 'Not Selected'}</span>
+          </div>
+          <div className="summary-item total">
+            <strong>Total Amt.:</strong>
+            <strong>₹{total}</strong>
+          </div>
         </div>
-      </div>
+
+        <div className="pickup-option">
+          <input
+            type="checkbox"
+            checked={pickup}
+            onChange={() => setPickup(!pickup)}
+          />
+          <label>Pickup & Drop Service</label>
+        </div>
 
       <div className="booking-summary">
         <h3>Booking Summary</h3>
