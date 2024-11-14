@@ -23,15 +23,19 @@
     justify-content: space-between;
     padding: 10px 20px;
     height: 90px;
-    
+   
     
     background-color: white;
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
   }
   
-  .logo {
+  .logo>img{
     font-weight: bold;
     font-size: 24px;
+    
+    width: 90px;
+    height: 60px;
+    
   }
   
   .nav-links {
@@ -62,6 +66,7 @@
     display: flex;
     align-items: center;
     gap: 5px;
+    
   }
   
   .location-text {

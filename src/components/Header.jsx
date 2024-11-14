@@ -5,10 +5,11 @@ const Header = () => {
   return (
     <>
       <nav className="navbar">
-        <a href='/'> <div className="logo">MRB</div></a>
+        <a href='/'> <div className="logo">
+          <img src="https://myresortbooking.in/public/images/logo.webp" alt="" />
+          </div></a>
         <div className="nav-links">
           <NavLink to="/" className="nav-link home" >Home</NavLink>
-          
           <NavLink to="/farmvilla" className="nav-link">Farm/Villa</NavLink>
           <NavLink to="/influencers" className="nav-link">Influencers</NavLink>
           <NavLink to="/about" className="nav-link">About Us</NavLink>
