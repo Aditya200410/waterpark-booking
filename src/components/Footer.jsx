@@ -68,6 +68,37 @@ const Footer = () => {
             <p>Build By Appzeto</p>
           </div>
         </div>
+
+
+        <div className="fomo">
+        <div className="fomoinfo">
+        <NavLink to="/" className="fomoinfo"> <img  src="https://myresortbooking.in/public/images/icons/home.webp" alt="" />
+           Home</NavLink>
+          </div>
+          <div className="fomoinfo">
+            <NavLink to="/resorts" className="fomoinfo"> <img c src="https://myresortbooking.in/public/images/icons/resort.webp" alt="" />
+           Resorts</NavLink>
+          </div>
+          <div className="fomoinfo">
+          <NavLink to="/farmvilla" className="fomoinfo"><img  src="https://myresortbooking.in/public/images/icons/villa.webp" alt="" />
+          <p> Villa</p>
+          </NavLink>
+
+          </div>
+          <div className="fomoinfo">
+          <NavLink to="/influencers" className="fomoinfo"><img src="https://myresortbooking.in/public/images/icons/collab.webp" alt="" />
+           Collab
+           </NavLink>
+
+          </div>
+         
+          <div className="fomoinfo">
+          <NavLink to="/contact" className="fomoinfo"><img src="https://myresortbooking.in/public/images/icons/more.webp" alt="" />
+           Contact
+           </NavLink>
+          </div>
+
+        </div>
     
     </>
   )

@@ -60,6 +60,7 @@ const Checkout = () => {
         <input
           type="text"
           name="name"
+          required
           placeholder="Enter Name"
           value={formData.name}
           onChange={handleChange}
@@ -70,6 +71,7 @@ const Checkout = () => {
           placeholder="Enter Email"
           value={formData.email}
           onChange={handleChange}
+          required
         />
         <input
           type="text"
@@ -77,6 +79,7 @@ const Checkout = () => {
           placeholder="Enter Phone No."
           value={formData.phone}
           onChange={handleChange}
+          required
         />
         <input
           type="text"
@@ -84,6 +87,7 @@ const Checkout = () => {
           placeholder="Enter Location"
           value={formData.location}
           onChange={handleChange}
+          required
         />
         <input
           type="date"
@@ -91,6 +95,7 @@ const Checkout = () => {
           placeholder="mm/dd/yyyy"
           value={formData.dob}
           onChange={handleChange}
+          required
         />
       </div>
       <div className="apply-coupon">

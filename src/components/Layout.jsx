@@ -6,9 +6,10 @@ import {Outlet} from 'react-router-dom'
 const Layout = () => {
   return (
     <>
-    <Header/>
+    <div className="moho"><Header/></div>
     <Outlet/>
-    <Footer/>
+    <div className="mofo"><Footer/></div>
+    
     </>
   )
 }

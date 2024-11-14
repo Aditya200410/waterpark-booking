@@ -7,12 +7,25 @@
   margin: 0px;
   padding: 0px;
 }
+.fomo{
+  display: none;
+  
+}
+.moho{
+  position: absolute;
+  top: 0px;
+  background-color: white;
+  position: fixed;
+  z-index: 99;
+  width: 100vw;
+}
 .tophead{
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: xx-large;
   color: #00aaff;
+  margin-top: 90px;
 }
 
 
@@ -34,7 +47,7 @@
     font-size: 24px;
     
     width: 90px;
-    height: 60px;
+    height: 50px;
     
   }
   
@@ -161,16 +174,21 @@ flex: 1;
 .homepage{
   width: 100%;
   height: 100%;
+  margin-top: 90px;
+  
 }
 .page1{
   width: 100%;
   height: 100%;
   background-color: aqua;
+  margin-top: 90px;
 }
 .contact-container {
-  max-width: 900px;
+  max-width: 500px;
   margin: auto;
   padding: 20px;
+  margin-top: 90px;
+  margin-bottom: 90px;
   font-family: Arial, sans-serif;
 }
 
@@ -273,6 +291,7 @@ flex: 1;
   font-family: Arial, sans-serif;
   text-align: center;
   color: #333;
+  margin-top: 90px;
 }
 
 .about-title {
@@ -302,15 +321,19 @@ flex: 1;
 
 .card-container {
   display: flex;
-  gap: 16px;
+ 
+  gap: 10px;
   padding: 16px;
   flex-wrap: wrap;
   justify-content: center;
+
 }
 
 .card {
   border: 1px dashed #ccc;
   border-radius: 8px;
+  display: flex;
+  flex-direction: column;
   width:320px;
   padding: 16px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -384,10 +407,13 @@ flex: 1;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  text-align: center;
+  font-size: 30px;
+
 }
-.homeinfo>p{
-  font-size: 50px;
+.homeinfop{
+  font-size: 40px;
+ text-align: center;
+ font-weight: 600;
    color: #1997e3;
    
 }
@@ -401,6 +427,8 @@ flex: 1;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   text-align: center;
+  
+ 
 }
 
 .carousel-image img {
@@ -461,6 +489,7 @@ flex: 1;
   padding: 20px;
   font-family: Arial, sans-serif;
   color: #333;
+  
 }
 
 .resort-title {
@@ -637,6 +666,7 @@ h2 {
   border-radius: 5px;
   cursor: pointer;
   margin-top: 20px;
+  margin-bottom: 100px;
 }
 
 .checkout-button:hover {
@@ -712,7 +742,9 @@ button:hover {
   margin-right: 10px;
 }
 
-
+.fbottomm{
+  display: none;
+}
 @media  (max-width: 768px) {
   *{
     overflow-x: hidden;
@@ -736,14 +768,66 @@ button:hover {
 }
 
 
-.homeinfo>p{
+.homeinfop{
   font-size: x-large;
   font-weight: bold;
-  
 }
 
 .checkout{
   width: 90vw;
 
+}
+.footer{
+  display: none;
+}
+.fbottomm{
+  margin-bottom: 85px;
+}
+.fbottom{
+  display: none;
+}
+.fbottomm{
+  display: block;
+  border-top: 2px solid white;
+  width: 100vw;
+  height: 70px;
+  background-color: #234778;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+
+}
+.fomo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+  width: 100vw;
+  height: 85px;
+  flex-direction: row;
+
+}
+.fomoinfo{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+ 
+}
+.fomoinfo>img{
+  display: flex;
+  justify-content: center;
+  
+  width: 40px;
+  height: 40px;
+}
+.mofo{
+  position: absolute;
+  bottom: 0px;
+  background-color: white;
+  position: fixed;
 }
 }

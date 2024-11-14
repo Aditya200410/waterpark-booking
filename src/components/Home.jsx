@@ -144,14 +144,23 @@ const Home = () => {
     </div>
 
       <div className="homeinfo">
-        <p>Popular Resorts</p>
-        <p>Creating Memories, One Adventure at a Time</p>
+        <p className="homeinfop">Popular Resorts</p>
+        <p className="homeinfop">Creating Memories, One Adventure at a Time</p>
       </div>
     <div className="card-container">
       {resorts.map((resort, index) => (
         <Card key={index} resort={resort} />
       ))}
     </div>
+    <div className="fbottomm">
+          <div className="fbl">
+            <p>Water park Chalo</p>
+          </div>
+          <div className="fbl">
+            <p>Build By Appzeto</p>
+          </div>
+        </div>
+  
     </div>
   );
 };
