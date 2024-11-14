@@ -7,7 +7,11 @@
   margin: 0px;
   padding: 0px;
 }
-
+.fbr img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+}
 
 .fomo{
   display: none;
@@ -155,7 +159,11 @@ flex: 1;
 
 }
 
-.fbl{
+.fbr{
+  display: flex;
+  gap: 10px;
+  border-radius: 50px;
+  object-fit: cover;
   margin-top: 10px;
 
 }
