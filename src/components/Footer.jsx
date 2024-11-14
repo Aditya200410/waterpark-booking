@@ -10,9 +10,9 @@ const Footer = () => {
         </div>
         <div className="fm">
                 <div className="fmcon">
-                  <NavLink href='/about'> <p>About us </p> </NavLink>
-                  <NavLink href='/'><p> Home</p> </NavLink>
-                  <NavLink href='/contact'><p> Contact</p> </NavLink>  
+                  <NavLink to='/about'> <p>About us </p> </NavLink>
+                  <NavLink to='/'><p> Home</p> </NavLink>
+                  <NavLink to='/contact'><p> Contact</p> </NavLink>  
                 </div>
                 <div className="fmcon">
                   <p>Support </p> 

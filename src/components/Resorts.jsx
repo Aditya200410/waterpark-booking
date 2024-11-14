@@ -187,7 +187,7 @@ const Resorts = () => {
         <label>Pickup & Drop Service</label>
       </div>
 
-     <NavLink href='/checkout'> <button className="checkout-button">PROCEED TO CHECKOUT</button></NavLink>
+     <NavLink to='/checkout'> <button className="checkout-button">PROCEED TO CHECKOUT</button></NavLink>
     </div>
     </>
   );
