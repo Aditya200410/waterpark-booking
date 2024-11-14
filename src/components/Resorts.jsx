@@ -87,6 +87,51 @@ const Resorts = () => {
     'D.J. Music',
     'Tube Slide',
   ];
+  const tripinfo = [
+    'Biggest Wave Pool',
+    '4 Big Swimming Pool',
+    '12+ Water Slides',
+    'Jungle theme',
+    'Tornado Slide',
+    '2 Rain Dance',
+    'D.J. Music',
+    'Tube Slide',
+  ];
+
+  const map = [
+    'Biggest Wave Pool',
+    '4 Big Swimming Pool',
+    '12+ Water Slides',
+    'Jungle theme',
+    'Tornado Slide',
+    '2 Rain Dance',
+    'D.J. Music',
+    'Tube Slide',
+  ];
+  const cost = [
+    'Biggest Wave Pool',
+    '4 Big Swimming Pool',
+    '12+ Water Slides',
+    'Jungle theme',
+    'Tornado Slide',
+    '2 Rain Dance',
+    'D.J. Music',
+    'Tube Slide',
+  ];
+
+  const FAQ = [
+    'Biggest Wave Pool',
+    '4 Big Swimming Pool',
+    '12+ Water Slides',
+    'Jungle theme',
+    'Tornado Slide',
+    '2 Rain Dance',
+    'D.J. Music',
+    'Tube Slide',
+  ];
+
+
+
 
   return (
     <>
@@ -122,7 +167,7 @@ const Resorts = () => {
       </p>
 
       <div className="tabs">
-        {['Attractions'].map((tab) => (
+        {['Attractions','tripinfo','cost','FAQ','map'].map((tab) => (
           <button
             key={tab}
             className={`tab-button ${activeTab === tab ? 'active' : ''}`}
@@ -142,6 +187,43 @@ const Resorts = () => {
           ))}
         </div>
       )}
+{activeTab === 'tripinfo' && (
+        <div className="attractions-list">
+          {attractions.map((attraction, index) => (
+            <div key={index} className="attraction-item">
+              <span className="checkmark">✔️</span> {attraction}
+            </div>
+          ))}
+        </div>
+      )}
+      {activeTab === 'map' && (
+        <div className="attractions-list">
+          {attractions.map((attraction, index) => (
+            <div key={index} className="attraction-item">
+              <span className="checkmark">✔️</span> {attraction}
+            </div>
+          ))}
+        </div>
+      )}
+      {activeTab === 'FAQ' && (
+        <div className="attractions-list">
+          {attractions.map((attraction, index) => (
+            <div key={index} className="attraction-item">
+              <span className="checkmark">✔️</span> {attraction}
+            </div>
+          ))}
+        </div>
+      )}
+        {activeTab === 'cost' && (
+        <div className="attractions-list">
+          {attractions.map((attraction, index) => (
+            <div key={index} className="attraction-item">
+              <span className="checkmark">✔️</span> {attraction}
+            </div>
+          ))}
+        </div>
+      )}
+
     </div>
 
     <div className="booking-container">
