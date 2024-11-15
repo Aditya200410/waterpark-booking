@@ -26,7 +26,7 @@ const router = createBrowserRouter(
       <Route path='farmvilla' element={<Farmvilla/>}/>
       <Route path='influencers' element={<Influencers />} />
       <Route path='resorts' element={<Resorts />} />
-      <Route path='checkout' element={<Checkout />} />
+      
       <Route path='/sign-in' element={<Login />} />
       <Route path='/UserDetails' element={<UserDetails/>} />
       <Route path='/admin' element={<Admin />} />
