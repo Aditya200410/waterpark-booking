@@ -92,7 +92,7 @@ function Admin() {
           value={newTask.disprice}
           onChange={handleInputChange}
         />
-        <button className="add-button" onClick={addTask}>Add Task</button>
+        <button className="add-button" onClick={addTask}>Add Card</button>
       </div>
 
       <div className="task-list">
@@ -139,7 +139,7 @@ function Admin() {
             </div>
           ))
         ) : (
-          <p className="no-tasks">No tasks available. Add some!</p>
+          <p className="no-tasks">No CARD available. Add some!</p>
         )}
       </div>
     </div>

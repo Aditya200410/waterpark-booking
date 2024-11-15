@@ -143,7 +143,7 @@ export default function SignUp() {
                                 fontWeight:"500",
                                 border:".125rem solid #00ced1"
                             } }} type="submit">
-                                Sign Up
+                                Sign Up and Book
                             </Button>
                         </Stack>
                         <Typography sx={{ color: 'whitesmoke', textAlign: 'center' }}>

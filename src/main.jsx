@@ -12,8 +12,10 @@ import Resorts from './components/Resorts'
 import Checkout from './components/Checkout'
 import Login from './components/Login'
 
-import UserDetails from './components/UserDetails'
+
 import Admin from './components/Admin'
+import UserDetails from './components/userDetails'
+
 
 
 const router = createBrowserRouter(
@@ -27,7 +29,7 @@ const router = createBrowserRouter(
       <Route path='resorts' element={<Resorts />} />
       <Route path='checkout' element={<Checkout />} />
       <Route path='/sign-in' element={<Login />} />
-      <Route path='/UserDetails' element={<UserDetails />} />
+      <Route path='/UserDetails' element={<UserDetails/>} />
       <Route path='/admin' element={<Admin />} />
      
     </Route>
