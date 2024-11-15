@@ -9,7 +9,6 @@ import Contact from './components/Contact'
 import Farmvilla from './components/farmvilla'
 import Influencers from './components/Influencers'
 import Resorts from './components/Resorts'
-import Checkout from './components/Checkout'
 import Login from './components/Login'
 
 
