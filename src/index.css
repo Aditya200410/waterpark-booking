@@ -198,7 +198,9 @@ h1 {
   }
   
   .location-text {
-    color: gray;
+    color: black;
+    margin-left: 15px;
+    font-weight: bolder;
   }
   
   .city {

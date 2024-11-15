@@ -17,7 +17,7 @@ const Header = () => {
         </div>
         <div className="location">
           <i className="fas fa-search"></i>
-          <span className="location-text">Location</span>
+          <NavLink to="/sign-in"><span className="location-text">Login</span></NavLink>
           <span className="city">Mumbai - All</span>
         </div>
       </nav>
