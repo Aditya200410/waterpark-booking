@@ -97,10 +97,10 @@ const Card = ({ resort }) => (
 
 const Home = () => {
   const images = [
-    'https://myresortbooking.in/public/uploads/banners/17274193709185mrb2.png',
-    'https://myresortbooking.in/public/uploads/banners/17274193709185mrb2.png',
-    'https://myresortbooking.in/public/uploads/banners/17274193709185mrb2.png',
-    'https://myresortbooking.in/public/uploads/banners/17274193709185mrb2.png',
+    'https://newdemo.rreda.in/wp-content/uploads/2024/11/post-1.jpg',
+    'https://newdemo.rreda.in/wp-content/uploads/2024/11/post-2.jpg',
+    'https://newdemo.rreda.in/wp-content/uploads/2024/11/post-1.jpg',
+    'https://newdemo.rreda.in/wp-content/uploads/2024/11/post-2.jpg',
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
