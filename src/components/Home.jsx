@@ -132,15 +132,7 @@ const Home = () => {
         &#10095;
       </button>
 
-      <div className="carousel-indicators">
-        {images.map((_, index) => (
-          <span
-            key={index}
-            className={`indicator ${index === currentIndex ? 'active' : ''}`}
-            onClick={() => setCurrentIndex(index)}
-          ></span>
-        ))}
-      </div>
+      
     </div>
 
       <div className="homeinfo">
